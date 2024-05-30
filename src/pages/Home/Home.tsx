@@ -1,13 +1,15 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import Hero from '../../components/HeroSection/Hero';
 import Technologies from '../../components/Technologies/Technologies';
 import { ProjectsSection } from '../../components/Projects/Projects';
-import videoBg from '../../assets/herovideo2.mp4';
+
 const Home: React.FC = () => {
   const triggerDivRef = useRef<HTMLDivElement>(null);
   const technologiesRef = useRef<HTMLDivElement>(null);
   const [triggerDivMid, setTriggerDivMid] = useState(0);
   const [technologiesMid, setTechnologiesMid] = useState(0);
+  const { scrollY } = useViewportScroll();
 
   useEffect(() => {
     const updatePositions = () => {
@@ -31,21 +33,19 @@ const Home: React.FC = () => {
     };
   }, []);
 
+  // Define parallax effect for the background
+  const backgroundY = useTransform(scrollY, [0, 1000], [0, 0]);
   return (
-    <div className="Home-container">
-      <div ref={triggerDivRef} className="relative border-rose-900 border-spacing-3 mb-8">
-        <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop className="w-full h-full object-cover">
-            <source src={videoBg} type="video/mp4" />
-          </video>
-        </div>
-        <div className="relative z-10">
-          <Hero />
-          <Technologies triggerDivMid={triggerDivMid} technologiesMid={technologiesMid} ref={technologiesRef} />
-        </div>
+    <div className="Home-container h-full">
+      <motion.div
+        className="absolute inset-0 z-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+        style={{ y: backgroundY }}
+      ></motion.div>
+      <div ref={triggerDivRef} className="relative z-10 mb-8 pb-16">
+        <Hero />
+        <Technologies triggerDivMid={triggerDivMid} technologiesMid={technologiesMid} ref={technologiesRef} />
       </div>
-      
-      <div className="block">
+      <div className="relative z-10">
         <ProjectsSection />
       </div>
     </div>

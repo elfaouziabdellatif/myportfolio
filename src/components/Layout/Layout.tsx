@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Spinner from '../Spinner/Spinner';
 import './Layout.css';
+import AnimatedCursor from 'react-animated-cursor';
 
 interface LayoutProps {
   children: ReactNode;
@@ -87,6 +88,7 @@ export default function Layout({ children }: LayoutProps) {
           >
             <Header />
           </motion.div>
+          <AnimatedCursor></AnimatedCursor>
           <main className="z-40">{children}</main>
           <div className="bottom-0 w-full h-full z-49">
             <Footer />
