@@ -1,0 +1,23 @@
+.service-section-container {
+  position: relative;
+  overflow: hidden; /* Prevent overflow on body */
+}
+
+.service-list {
+  position: relative; /* Allows absolute positioning for sections */
+}
+
+.service-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
+
+.service-link.active {
+  opacity: 1; /* Fully show the active service */
+}
+
+.animated-title {
+  z-index: 1; /* Ensure the title is above the background */
+}

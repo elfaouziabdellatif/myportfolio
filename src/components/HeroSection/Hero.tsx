@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
-import { FiChevronDown } from 'react-icons/fi'; // Import scroll-down icon from react-icons library
+import { FiChevronDown } from 'react-icons/fi';
 import './HeroSection.css';
+import { styles } from '../../style';
 
 const Hero = () => {
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
@@ -20,7 +21,6 @@ const Hero = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Define parallax effect for different elements
   const y1 = useTransform(scrollY, [0, 0.5 * window.innerHeight], [0, -0.1 * window.innerHeight]);
   const y2 = useTransform(scrollY, [0, 0.5 * window.innerHeight], [0, -0.06 * window.innerHeight]);
   const y3 = useTransform(scrollY, [0, 0.5 * window.innerHeight], [0, -0.04 * window.innerHeight]);
@@ -31,24 +31,23 @@ const Hero = () => {
         <motion.div className="mb-4 flex items-center space-x-4" style={{ y: y2 }}>
           <div className="flex items-center space-x-2">
             <div className="w-3 h-3 rounded-full bg-green-300"></div>
-            <p className="text-sm">Available for work</p>
+            <p className="text-sm">Open for new challenges</p>
           </div>
-          <p className="text-sm">My time is: 02:37 AM</p>
+          <p className="text-sm">Current time: 02:37 AM</p>
         </motion.div>
         <motion.h1 className="text-4xl md:text-6xl font-bold md:text-5xl lg:text-6xl xl:text-7xl" style={{ y: y2 }}>
-          Crafting Seamless <span className="text-yellow-500">Digital Journeys</span><br />
-          With UX/UI & Webflow Excellence
+          Building the future, one <span style={{color:styles.mainconolor}}>line of code</span> <br />
+          at a time
         </motion.h1>
         <motion.p className="mt-4 text-lg md:text-xl" style={{ y: y3 }}>
-          I create human-centered websites that persuade and engage audiences<br />
-          in trusting your company.
+          Passionate about crafting digital experiences that are intuitive and impactful. Let’s create something amazing together.
         </motion.p>
         <motion.a 
-          href="/template" 
+          href="/projects" 
           className="mt-6 px-6 py-3 border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black transition duration-300"
           style={{ y: y3 }}
         >
-          See My Templates
+          Explore My Work
         </motion.a>
       </motion.div>
 

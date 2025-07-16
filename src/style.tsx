@@ -12,6 +12,8 @@ const styles = {
       "text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
     sectionSubText:
       "sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider",
+    mainconolor : 'rgb(234 179 8)',
+    mainbgcolor : 'bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500',
   };
   
   export { styles };

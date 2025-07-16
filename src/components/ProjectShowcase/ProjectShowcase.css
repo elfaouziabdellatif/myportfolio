@@ -1,0 +1,92 @@
+.project-showcase {
+  padding: 4rem 2rem;
+  background: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.showcase-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  background: #fff;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.project-details {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-details h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #333;
+}
+
+.project-details p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.technologies {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tech-badge {
+  background: #0070f3;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.view-project {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #0070f3;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.view-project:hover {
+  background: #005bb5;
+}

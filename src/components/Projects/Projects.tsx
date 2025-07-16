@@ -23,7 +23,7 @@ export function ProjectsSection() {
           Hover over this card to unleash the power of CSS perspective
         </CardItem>
         <CardItem translateZ="100" className="w-full mt-4">
-          <Avatarhero/>
+          z
         </CardItem>
         <div className="flex justify-between items-center mt-20">
           <CardItem

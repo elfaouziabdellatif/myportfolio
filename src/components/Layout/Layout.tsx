@@ -90,9 +90,7 @@ export default function Layout({ children }: LayoutProps) {
           </motion.div>
           <AnimatedCursor></AnimatedCursor>
           <main className="z-40">{children}</main>
-          <div className="bottom-0 w-full h-full z-49">
-            <Footer />
-          </div>
+          
         </div>
       )}
     </>

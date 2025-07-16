@@ -19,14 +19,14 @@ html, body {
     height: 100%;
   }
 ::-webkit-scrollbar {
-    width: 14px;
+    width: 2px;
     height: 14px;
   }
   
   /* Track */
   ::-webkit-scrollbar-track {
     border-radius: 100vh;
-    background: #edf2f7;
+    background: black;
   }
   
   /* Handle */

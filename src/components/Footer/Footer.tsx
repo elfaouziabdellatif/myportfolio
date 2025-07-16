@@ -1,119 +1,41 @@
-import React from 'react';
-import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-50 text-center text-surface/75 dark:bg-neutral-700 dark:text-white/75 lg:text-left">
-      <div className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-white/10 lg:justify-between">
-        <div className="me-12 hidden lg:block">
-          <span>Get connected with us on social networks:</span>
-        </div>
-        <div className="flex justify-center">
-          <a href="#!" className="me-6 text-2xl text-blue-500 hover:text-blue-600">
-            <FaTwitter />
-          </a>
-          <a href="#!" className="me-6 text-2xl text-blue-500 hover:text-blue-600">
-            <FaFacebook />
-          </a>
-          <a href="#!" className="me-6 text-2xl text-blue-500 hover:text-blue-600">
-            <FaInstagram />
-          </a>
-          <a href="#!" className="me-6 text-2xl text-blue-500 hover:text-blue-600">
-            <FaLinkedin />
-          </a>
-          <a href="#!" className="text-2xl text-blue-500 hover:text-blue-600">
-            <FaYoutube />
-          </a>
-        </div>
-      </div>
+    <footer className="bg-gradient-to-t from-gray-800 via-purple-900 to-transparent text-white py-12 px-6">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-4">Want to Work Together?</h2>
+        <p className="text-lg mb-6">
+          I'm always open to new opportunities and collaborations. Let's build something awesome!
+        </p>
+        <a
+          href="mailto:your@email.com"
+          className="inline-block bg-white text-gray-900 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-200 transition duration-300"
+        >
+          Get in Touch
+        </a>
 
-      <div className="mx-6 py-10 text-center md:text-left">
-        <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <h6 className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
-              <span className="me-3 text-2xl text-blue-500">
-                <FaTwitter />
-              </span>
-              TW Elements
-            </h6>
-            <p>
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
-            </p>
-          </div>
-          <div>
-            <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-              Products
-            </h6>
-            <p className="mb-4">
-              <a href="#!">Angular</a>
-            </p>
-            <p className="mb-4">
-              <a href="#!">React</a>
-            </p>
-            <p className="mb-4">
-              <a href="#!">Vue</a>
-            </p>
-            <p>
-              <a href="#!">Laravel</a>
-            </p>
-          </div>
-          <div>
-            <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-              Useful links
-            </h6>
-            <p className="mb-4">
-              <a href="#!">Pricing</a>
-            </p>
-            <p className="mb-4">
-              <a href="#!">Settings</a>
-            </p>
-            <p className="mb-4">
-              <a href="#!">Orders</a>
-            </p>
-            <p>
-              <a href="#!">Help</a>
-            </p>
-          </div>
-          <div>
-            <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-              Contact
-            </h6>
-            <p className="mb-4 flex items-center justify-center md:justify-start">
-              <span className="me-3 text-2xl text-blue-500">
-                <FaTwitter />
-              </span>
-              New York, NY 10012, US
-            </p>
-            <p className="mb-4 flex items-center justify-center md:justify-start">
-              <span className="me-3 text-2xl text-blue-500">
-                <FaFacebook />
-              </span>
-              info@example.com
-            </p>
-            <p className="mb-4 flex items-center justify-center md:justify-start">
-              <span className="me-3 text-2xl text-blue-500">
-                <FaInstagram />
-              </span>
-              + 01 234 567 88
-            </p>
-            <p className="flex items-center justify-center md:justify-start">
-              <span className="me-3 text-2xl text-blue-500">
-                <FaLinkedin />
-              </span>
-              + 01 234 567 89
-            </p>
-          </div>
+        <div className="flex justify-center mt-10 space-x-6">
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
+            <FaGithub size={26} />
+          </a>
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition">
+            <FaLinkedin size={26} />
+          </a>
+          <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
+            <FaTwitter size={26} />
+          </a>
+          <a href="mailto:your@email.com" className="hover:text-blue-400 transition">
+            <FaEnvelope size={26} />
+          </a>
         </div>
-      </div>
 
-      <div className="bg-black/5 p-6 text-center">
-        <span>© 2023 Copyright:</span>
-        <a className="font-semibold" href="https://tw-elements.com/">TW Elements</a>
+        <p className="mt-10 text-sm text-gray-400">
+          &copy; {new Date().getFullYear()} Abdellatif El Faouzi. All rights reserved.
+        </p>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

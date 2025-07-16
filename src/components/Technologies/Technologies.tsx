@@ -24,7 +24,7 @@ const Technologies = forwardRef<HTMLDivElement, TechnologiesProps>(({ triggerDiv
   const [drawingProgress, setDrawingProgress] = useState(0);
 
   // Define spring configuration for smoother animations
-  const springConfig = { damping: 30, stiffness: 90 };
+  const springConfig = { damping: 40, stiffness: 90 };
 
   // Update drawing progress based on scroll position
   useEffect(() => {
@@ -32,9 +32,7 @@ const Technologies = forwardRef<HTMLDivElement, TechnologiesProps>(({ triggerDiv
       const progress = (scrollY.get() - triggerDivMid) / (technologiesMid - triggerDivMid);
       setDrawingProgress(Math.max(0, Math.min(1, progress)));
     };
-
     updateDrawingProgress();
-
     const unsubscribeScroll = scrollY.onChange(updateDrawingProgress);
     return () => unsubscribeScroll();
   }, [scrollY, triggerDivMid, technologiesMid]);
@@ -66,7 +64,7 @@ const Technologies = forwardRef<HTMLDivElement, TechnologiesProps>(({ triggerDiv
         <motion.div className="relative w-full h-full flex justify-around">
           {initialTransforms.map(({ translateX, translateY, rotate, image }, index) => {
             const x = useSpring(useTransform(scrollY, [triggerDivMid, technologiesMid], [translateX, 0]), springConfig);
-            const y = useSpring(useTransform(scrollY, [triggerDivMid, technologiesMid], [translateY, 15]), springConfig);
+            const y = useSpring(useTransform(scrollY, [triggerDivMid, technologiesMid], [translateY, -10]), springConfig);
             const r = useSpring(useTransform(scrollY, [triggerDivMid, technologiesMid], [rotate, 0]), springConfig);
 
             return (
@@ -74,14 +72,25 @@ const Technologies = forwardRef<HTMLDivElement, TechnologiesProps>(({ triggerDiv
                 key={index}
                 className="w-fit h-fit"
                 style={{ x, y, rotate: r }}
-                whileHover={{ scale: [1, 1.1] }}
-                transition={{ type: 'spring', stiffness: 300, yoyo: Infinity, repeatDelay: 0.5 }}
+                
+                transition={{ type: 'spring', stiffness: 300 }}
               >
-                <img src={image} className="border-black rounded-md w-52 drop-shadow-2xl" alt="" />
+                <motion.img whileHover={{ scale: 1.1}} src={image} className="border-black rounded-md w-52 drop-shadow-2xl" alt="" />
               </motion.div>
             );
           })}
+          
         </motion.div>
+        
+      </div>
+      <div className="relative w-full flex justify-center mb-10">
+        <motion.div
+          className=" border-b-2 border-gray-300 w-52 h-16"
+          style={{
+            scaleX: drawingProgress,
+            originY: 0,
+          }}
+        ></motion.div>
       </div>
     </div>
   );
